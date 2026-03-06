@@ -1,0 +1,43 @@
+# Environment variables
+.env
+.env.local
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Models
+ai-model/models/*
+*.pth
+*.pt
+*.onnx
+*.weights
+
+# Temporary
+tmp/
+temp/
+*~
+.DS_Store
+Thumbs.db

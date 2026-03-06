@@ -1,0 +1,513 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   DEEPGUARD - GLOBAL STYLES
+   Dark Futuristic Cyber-AI Theme
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7, #3b82f6);
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: #fff;
+}
+
+/* ==========================================
+   UIVERSE-STYLE BUTTON COMPONENT
+   Glowing neon button with hover effects
+   ========================================== */
+
+.ui-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(59, 130, 246, 0.15));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  gap: 8px;
+}
+
+.ui-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.ui-btn:hover::before {
+  opacity: 1;
+}
+
+.ui-btn:hover {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5), 0 0 50px rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.ui-btn:active {
+  transform: translateY(0);
+}
+
+.ui-btn span,
+.ui-btn svg {
+  position: relative;
+  z-index: 1;
+}
+
+.ui-btn-lg {
+  padding: 16px 40px;
+  font-size: 17px;
+  border-radius: 14px;
+}
+
+.ui-btn-sm {
+  padding: 8px 20px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.ui-btn-danger {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+}
+
+.ui-btn-danger::before {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.ui-btn-danger:hover {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+}
+
+.ui-btn-success {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+}
+
+.ui-btn-success::before {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.ui-btn-success:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+}
+
+/* ==========================================
+   UIVERSE-STYLE CARD COMPONENT
+   Glassmorphism with glow border
+   ========================================== */
+
+.ui-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(18, 18, 26, 0.8), rgba(10, 10, 15, 0.95));
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.ui-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5), rgba(59, 130, 246, 0.5), transparent);
+}
+
+.ui-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+.ui-card-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+/* ==========================================
+   UIVERSE-STYLE LOADER COMPONENT
+   Orbital scanning animation
+   ========================================== */
+
+.ui-loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.ui-loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: loaderSpin 1.5s linear infinite;
+}
+
+.ui-loader-ring:nth-child(1) {
+  border-top-color: #a855f7;
+  animation-duration: 1.5s;
+}
+
+.ui-loader-ring:nth-child(2) {
+  inset: 6px;
+  border-right-color: #3b82f6;
+  animation-duration: 2s;
+  animation-direction: reverse;
+}
+
+.ui-loader-ring:nth-child(3) {
+  inset: 12px;
+  border-bottom-color: #06b6d4;
+  animation-duration: 2.5s;
+}
+
+.ui-loader-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #a855f7;
+  border-radius: 50%;
+  animation: loaderPulse 1s ease-in-out infinite;
+}
+
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.8); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Large loader for scan page */
+.ui-loader-lg {
+  width: 120px;
+  height: 120px;
+}
+
+.ui-loader-lg .ui-loader-ring {
+  border-width: 4px;
+}
+
+.ui-loader-lg .ui-loader-dot {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================
+   UIVERSE-STYLE INPUT COMPONENT
+   Floating label with neon underline
+   ========================================== */
+
+.ui-input-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.ui-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+  background: rgba(18, 18, 26, 0.6);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.ui-input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  background: rgba(18, 18, 26, 0.9);
+}
+
+.ui-input::placeholder {
+  color: #64748b;
+}
+
+.ui-input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   UIVERSE-STYLE PROGRESS BAR
+   Animated neon gradient fill
+   ========================================== */
+
+.ui-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(18, 18, 26, 0.8);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.ui-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #3b82f6, #06b6d4);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+  position: relative;
+}
+
+.ui-progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.ui-progress-lg {
+  height: 12px;
+}
+
+/* ==========================================
+   UIVERSE-STYLE FILE UPLOAD (DRAG & DROP)
+   Dashed border with glow on hover
+   ========================================== */
+
+.ui-upload-zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  border: 2px dashed rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+  background: rgba(18, 18, 26, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 250px;
+}
+
+.ui-upload-zone:hover,
+.ui-upload-zone.active {
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.05);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15), inset 0 0 30px rgba(168, 85, 247, 0.05);
+}
+
+.ui-upload-zone.active {
+  border-color: #3b82f6;
+  animation: uploadPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes uploadPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.3), inset 0 0 40px rgba(59, 130, 246, 0.05); }
+}
+
+.ui-upload-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  color: #a855f7;
+  opacity: 0.7;
+}
+
+.ui-upload-text {
+  font-size: 16px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.ui-upload-hint {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+/* ==========================================
+   UIVERSE-STYLE TOGGLE SWITCH
+   ========================================== */
+
+.ui-toggle {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  background: rgba(18, 18, 26, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ui-toggle.active {
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.ui-toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.ui-toggle.active .ui-toggle-knob {
+  transform: translateX(24px);
+}
+
+/* ==========================================
+   SCAN ANIMATION
+   ========================================== */
+
+.scan-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a855f7, #3b82f6, #a855f7, transparent);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
+  animation: scanLineMove 2.5s ease-in-out infinite;
+}
+
+@keyframes scanLineMove {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+.scan-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #a855f7;
+}
+
+.scan-corner-tl { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.scan-corner-tr { top: 8px; right: 8px; border-top: 2px solid; border-right: 2px solid; }
+.scan-corner-bl { bottom: 8px; left: 8px; border-bottom: 2px solid; border-left: 2px solid; }
+.scan-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+/* ==========================================
+   CYBER BACKGROUND GRID
+   ========================================== */
+
+.cyber-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* ==========================================
+   BADGE / TAG
+   ========================================== */
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ui-badge-fake {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.ui-badge-real {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+  .ui-card { padding: 16px; }
+  .ui-btn-lg { padding: 14px 28px; font-size: 15px; }
+  .ui-upload-zone { padding: 32px 16px; min-height: 200px; }
+}
