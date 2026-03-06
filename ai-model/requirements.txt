@@ -8,3 +8,4 @@ torchvision
 transformers
 opencv-python
 scipy
+av
